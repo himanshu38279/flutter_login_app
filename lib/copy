@@ -1,0 +1,49 @@
+/* my firebasecode store data and reterive the data
+class MyApp extends StatelessWidget {
+  var fsconnect = FirebaseFirestore.instance;
+
+  getdata() async {
+    var firedata = await fsconnect.collection("student").get();
+
+    //print(firedata.docs[0].data());
+
+    for (var i in firedata.docs) {
+      print(i.data());
+    }
+  }
+
+  // Firebase.initializeApp();
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Firebase app For student "),
+        ),
+        body: Column(
+          children: <Widget>[
+            RaisedButton(
+              onPressed: () {
+                fsconnect.collection("student").add({
+                  'name': 'Krish',
+                  "phone": 123456,
+                  "email": "himanshu@gmail.com"
+                });
+                print('hi');
+              },
+              child: Text("add data in firebase DB"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                getdata();
+                print('hi');
+              },
+              child: Text("get data from firebase DB"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+*/
